@@ -10,27 +10,27 @@ import {
 
 const Skills = () => {
   return (
-    <div className="py-[12%]">
-      <h1 className="text-4xl font-bold text-center pb-10 ">Skills</h1>
+    <div id="skills" className="py-[4%] scroll-mt-8">
+      <h1 className="text-4xl xs:text-6xl font-bold text-center pb-[5%] ">Skills</h1>
       <div className="flex flex-col md:flex-col w-full justify-between md:justify-between items-center gap-16">
         <SkillsBlock
           title="Languages"
           tags={Object.values(langauges)}
           direction="left"
-          duration={40}
+          duration={5}
         />
         <SkillsBlock
-          title="Frameworks"
+          title="Frameworks and Tech"
           tags={Object.values(frameworksAndTechnologies)}
           direction="right"
-          duration={40}
+          duration={5}
         />
 
         <SkillsBlock
           title="Tools"
           tags={Object.values(tools)}
           direction="left"
-          duration={40}
+          duration={5}
         />
       </div>
     </div>

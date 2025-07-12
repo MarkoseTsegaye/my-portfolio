@@ -5,47 +5,41 @@ import React from "react";
 import Button from "../ui/Button";
 
 const ProjectBlock = ({
-  imageUrl,
-  title,
-  description,
-  tags,
-  link,
+  project,
 }: {
-  imageUrl: string;
-  title: string;
-  description: string;
-  tags: string[];
-  link: string;
+  project: {
+    imageUrl: string;
+    title: string;
+    description: string;
+    tags: string[];
+    link: string;
+    buttons: string[];
+  };
 }) => {
   return (
-    <div className="flex flex-col gap-2  rounded-lg p-5  w-full sm:w-2/3 h-[500px]">
+    <div className="flex flex-col gap-2   p-5  w-3/4 lg:w-1/3 h-[500px] border-t border-foreground/30">
+      <h1 className="text-2xl font-bold text-center">{project.title}</h1>
       <Image
-        src={imageUrl}
-        alt={title}
+        src={project.imageUrl}
+        alt={project.title}
         width={300}
         height={300}
-        className="rounded-lg w-full h-2/3 object-contain"
+        className="rounded-lg w-full p-2 object-contain hover:scale-105 transition-all duration-300 "
       />
-      <div className="flex flex-col gap-5 flex-1 ">
-        <h1 className="text-2xl font-bold text-center">{title}</h1>
-        <p className="text-sm text-muted-foreground">{description}</p>
-        <div className="flex flex-col xl:flex-row gap-2 justify-center">
-          <Button
-            leftImageSrc={"mdi:github"}
-            leftImageAlt={title}
-            onClick={() => {}}
-            className="cursor-pointer hover:bg-accent-foreground text-accent-foreground rounded-lg hover:text-accent-foreground/80 py-2 px-4 transition-colors"
-          >
-            GitHub
-          </Button>
-          <Button
-            leftImageSrc={"mdi:link"}
-            leftImageAlt={title}
-            onClick={() => {}}
-            className="cursor-pointer hover:bg-accent-foreground text-accent-foreground rounded-lg hover:text-accent-foreground/80 py-2 px-4 transition-colors"
-          >
-            Demo
-          </Button>
+      <div className="flex flex-col gap-5 flex-1 justify-center w-full">
+        <p className="text-sm text-muted-foreground">{project.description}</p>
+        <div className="flex w-full mx-auto flex-row gap-2 justify-center items-center">
+          {project.buttons.map((button, key) => (
+            <Button
+              leftImageSrc={"mdi:github"}
+              leftImageAlt={project.title}
+              onClick={() => {}}
+              className="cursor-pointer hover:bg-foreground text-accent rounded-lg hover:text-background  py-2 px-4 transition-colors"
+              key={key}
+            >
+              {button}
+            </Button>
+          ))}
         </div>
       </div>
     </div>

@@ -1,35 +1,31 @@
+"use client";
 import { imageUrls } from "@/app/constants/skills";
 import React from "react";
 import ProjectBlock from "../blocks/ProjectBlock";
+import { motion } from "framer-motion";
+import { projects } from "@/app/constants/projects";
 
 const Projects = () => {
   return (
-    <div>
-      <h1 className="text-4xl font-bold text-center pb-10">Projects</h1>
-      <div className="flex flex-col xl:flex-row w-full  items-center gap-8">
-        <ProjectBlock
-          imageUrl={imageUrls.forkcast}
-          title="Forkcast"
-          description="Forkcast is a web application that allows users to create and share their own playlists."
-          tags={["React", "JavaScript", "Tailwind CSS", "TypeScript"]}
-          link="/forkcast.png"
-        />
-        <ProjectBlock
-          imageUrl={imageUrls.algoMinds}
-          title="AlgoMinds"
-          description="AlgoMinds is a web application that allows users to create and share their own playlists."
-          tags={["React", "JavaScript", "Tailwind CSS", "TypeScript"]}
-          link="/forkcast.png"
-        />
-        <ProjectBlock
-          imageUrl={imageUrls.debateGuard}
-          title="DebateGuard"
-          description="DebateGuard is a web application that allows users to create and share their own playlists."
-          tags={["React", "JavaScript", "Tailwind CSS", "TypeScript"]}
-          link="/forkcast.png"
-        />
+    <motion.div
+      id="projects"
+      initial={{ opacity: 0, y: 50 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, amount: 0.5 }}
+      transition={{ duration: 0.5, ease: "easeInOut" }}
+      className="py-[7%]"
+    >
+      <h1 className="text-4xl xs:text-6xl font-bold text-center pb-[7%] ">Projects</h1>
+      <div className="flex flex-col lg:flex-row w-full justify-center items-center gap-16">
+        {Object.values(projects).map((project) => (
+          <ProjectBlock
+            key={project.title}
+            project={project}
+          />
+        ))}
+        
       </div>
-    </div>
+    </motion.div>
   );
 };
 

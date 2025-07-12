@@ -14,6 +14,7 @@
   --card-foreground: #111827;      /* deep gray */
   --link: #1d4ed8;                 /* blue */
   --link-hover: #1e40af;           /* darker blue */
+  --invert-filter: none;           /* no inversion in light mode */
 }
 
 /* Dark mode palette - Elegant Neutrals */
@@ -30,6 +31,7 @@
   --card-foreground: #f8fafc;      /* off white */
   --link: #60a5fa;                 /* soft blue */
   --link-hover: #93c5fd;           /* lighter blue */
+  --invert-filter: invert(1);      /* invert in dark mode */
 }
 
 @theme inline {
