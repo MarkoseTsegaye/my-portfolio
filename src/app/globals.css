@@ -1,26 +1,65 @@
 @import "tailwindcss";
 
+/* Light mode palette - Soft Modern Neutrals */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #f9fafb;           /* soft white */
+  --foreground: #111827;           /* neutral dark gray */
+  --primary: #1d4ed8;              /* soft blue */
+  --primary-hover: #1e40af;        /* deeper blue */
+  --secondary: #e0e7ff;            /* light indigo */
+  --accent: #f3f4f6;               /* light gray */
+  --muted: #f9fafb;                /* off white */
+  --border: #d1d5db;               /* medium-light gray */
+  --card: #ffffff;                 /* pure white */
+  --card-foreground: #111827;      /* deep gray */
+  --link: #1d4ed8;                 /* blue */
+  --link-hover: #1e40af;           /* darker blue */
+}
+
+/* Dark mode palette - Elegant Neutrals */
+.dark {
+  --background: #0f172a;           /* deep slate */
+  --foreground: #f8fafc;           /* off white */
+  --primary: #60a5fa;              /* soft blue */
+  --primary-hover: #3b82f6;        /* bright blue */
+  --secondary: #1e293b;            /* slate gray */
+  --accent: #334155;               /* medium slate */
+  --muted: #1e293b;                /* dark muted */
+  --border: #475569;               /* slate border */
+  --card: #1e293b;                 /* slightly lighter than bg */
+  --card-foreground: #f8fafc;      /* off white */
+  --link: #60a5fa;                 /* soft blue */
+  --link-hover: #93c5fd;           /* lighter blue */
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
+  --color-primary: var(--primary);
+  --color-primary-hover: var(--primary-hover);
+  --color-secondary: var(--secondary);
+  --color-accent: var(--accent);
+  --color-muted: var(--muted);
+  --color-border: var(--border);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-link: var(--link);
+  --color-link-hover: var(--link-hover);
+
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
-}
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --breakpoint-xs: 480px;
+  --breakpoint-sm: 640px;
+  --breakpoint-md: 768px;
+  --breakpoint-lg: 1024px;
+  --breakpoint-xl: 1280px;
+  --breakpoint-2xl: 1536px;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+  transition: background 0.2s, color 0.2s;
 }
