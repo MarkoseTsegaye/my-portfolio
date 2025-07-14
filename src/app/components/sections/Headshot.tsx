@@ -6,6 +6,13 @@ import { motion } from "framer-motion";
 import Button from "../ui/Button";
 
 const Headshot = () => {
+  const handleDownloadResume = () => {
+    const resumeUrl = "files/Markose_Tsegaye_Resume_7.pdf";
+    const link = document.createElement("a");
+    link.href = resumeUrl;
+    link.download = "Markose_Tsegaye_Resume.pdf";
+    link.click();
+  };
   return (
     <div
       id="about"
@@ -35,7 +42,7 @@ const Headshot = () => {
             <Button
               leftImageSrc="mdi:file-pdf"
               leftImageAlt="Resume"
-              onClick={() => {}}
+              onClick={() => {handleDownloadResume()}}
               ctaButton={"mdi:arrow-down"}
               className="cursor-pointer hover:bg-foreground text-accent text-center text-lg rounded-lg hover:text-background   transition-colors"
             >
@@ -68,7 +75,7 @@ const Headshot = () => {
             <Button
               leftImageSrc="mdi:file-pdf"
               leftImageAlt="Resume"
-              onClick={() => {}}
+              onClick={() => {handleDownloadResume()}}
               ctaButton={"mdi:arrow-down"}
               className="cursor-pointer hover:bg-foreground text-accent rounded-lg hover:text-background  py-2 px-4 transition-colors"
             >

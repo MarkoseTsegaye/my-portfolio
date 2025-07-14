@@ -3,6 +3,7 @@ import Headshot from "../sections/Headshot";
 import Skills from "../sections/Skills";
 import Projects from "../sections/Projects";
 import Contact from "../sections/Contact";
+import Tiktok from "../sections/Tiktok";
 
 const LandingPage = () => {
   return (
@@ -10,6 +11,7 @@ const LandingPage = () => {
       <Headshot />
       <Skills />
       <Projects />
+      <Tiktok />
       <Contact />
     </div>
   );

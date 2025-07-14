@@ -1,29 +1,27 @@
 "use client";
 import React from "react";
 import { Icon } from "@iconify/react/dist/iconify.js";
+import { socialLinks } from "@/app/constants/links";
 
 const Contact = () => {
   const handleEmailClick = () => {
-    window.location.href = "mailto:mtsegay@gmu.edu";
+    window.location.href = socialLinks.email.link;
   };
 
   const handlePhoneClick = () => {
-    window.location.href = "tel:+16478888888";
+    window.location.href = socialLinks.phone.link;
   };
 
   const handleLinkedInClick = () => {
-    window.open("https://linkedin.com/in/your-profile", "_blank");
+    window.open(socialLinks.linkedin, "_blank");
   };
 
   const handleGitHubClick = () => {
-    window.open("https://github.com/your-username", "_blank");
+    window.open(socialLinks.github, "_blank");
   };
 
   return (
-    <section
-      id="contact"
-      className="py-[7%] px-4 relative overflow-hidden"
-    >
+    <section id="contact" className="py-[7%] px-4 relative overflow-hidden">
       {/* Background decorative elements */}
 
       <div className="max-w-6xl mx-auto relative z-10">
@@ -61,7 +59,7 @@ const Contact = () => {
                 </div>
               </div>
               <p className="text-lg text-foreground font-medium group-hover:text-primary-hover transition-colors duration-300 text-center">
-                mtsegay@gmu.edu
+                {socialLinks.email.label}
               </p>
             </div>
           </div>
@@ -86,7 +84,7 @@ const Contact = () => {
                 </div>
               </div>
               <p className="text-lg text-foreground font-medium group-hover:text-primary-hover transition-colors duration-300 text-center">
-                +1 (647) 888-8888
+                {socialLinks.phone.label}
               </p>
             </div>
           </div>

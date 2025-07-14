@@ -3,6 +3,7 @@ import { Icon } from "@iconify/react/dist/iconify.js";
 import Image from "next/image";
 import React from "react";
 import Button from "../ui/Button";
+import { projectLinks } from "@/app/constants/links";
 
 const ProjectBlock = ({
   project,
@@ -12,7 +13,7 @@ const ProjectBlock = ({
     title: string;
     description: string;
     tags: string[];
-    link: string;
+    links: string[];
     buttons: string[];
   };
 }) => {
@@ -33,7 +34,9 @@ const ProjectBlock = ({
             <Button
               leftImageSrc={"mdi:github"}
               leftImageAlt={project.title}
-              onClick={() => {}}
+              onClick={() => {
+                window.open(project.links[key], "_blank");
+              }}
               className="cursor-pointer hover:bg-foreground text-accent rounded-lg hover:text-background  py-2 px-4 transition-colors"
               key={key}
             >

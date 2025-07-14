@@ -1,8 +1,7 @@
 "use client";
-import React from "react";
+import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { useMediaQuery } from "react-responsive";
 
 const SkillsBlock = ({
   title,
@@ -15,12 +14,27 @@ const SkillsBlock = ({
   direction: "left" | "right";
   duration: number;
 }) => {
-  // Use react-responsive to detect if screen is small (sm)
-  // Tailwind's sm is min-width: 640px, so "isSm" means >= 640px
-  const isSm = useMediaQuery({ minWidth: 640 });
+  const [isSm, setIsSm] = useState(false);
+  const [isMounted, setIsMounted] = useState(false);
+
+  useEffect(() => {
+    setIsMounted(true);
+    const checkScreenSize = () => {
+      setIsSm(window.innerWidth >= 640);
+    };
+
+    checkScreenSize();
+    window.addEventListener("resize", checkScreenSize);
+
+    return () => window.removeEventListener("resize", checkScreenSize);
+  }, []);
 
   // Define image size based on screen
   const getImageSize = (tagSize: number) => {
+    // During SSR or before mounting, use the smaller size to match server
+    if (!isMounted) {
+      return Math.round(tagSize );
+    }
     // If sm and up, use tag.size, else use a smaller size (e.g., 60)
     return isSm ? tagSize : Math.round(tagSize * 0.6);
   };
@@ -61,16 +75,16 @@ const SkillsBlock = ({
               }}
             >
               <div className="flex items-center justify-center flex-row border-3 border-primary/10 rounded-xl p-2">
-              <Image
-                src={`/${tag.image}`}
-                alt={tag.label}
-                width={getImageSize(tag.size)}
-                height={getImageSize(tag.size)}
-                style={{
-                  filter: tag.invert ? "var(--invert-filter)" : "none",
-                }}
-                className={`hover:scale-115 transition-all object-cover  duration-300`}
-              />
+                <Image
+                  src={`/${tag.image}`}
+                  alt={tag.label}
+                  width={getImageSize(tag.size)}
+                  height={getImageSize(tag.size)}
+                  style={{
+                    filter: tag.invert ? "var(--invert-filter)" : "none",
+                  }}
+                  className={`hover:scale-115 transition-all object-cover  duration-300`}
+                />
               </div>
               <p className="text-sm text-muted-foreground  text-center py-1 font-semibold">
                 {tag.label}
