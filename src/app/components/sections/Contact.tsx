@@ -16,10 +16,6 @@ const Contact = () => {
     window.open(socialLinks.linkedin, "_blank");
   };
 
-  const handleGitHubClick = () => {
-    window.open(socialLinks.github, "_blank");
-  };
-
   return (
     <section id="contact" className="py-[7%] px-4 relative overflow-hidden">
       {/* Background decorative elements */}

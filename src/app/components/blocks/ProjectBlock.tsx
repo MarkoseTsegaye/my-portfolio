@@ -1,9 +1,7 @@
 "use client";
-import { Icon } from "@iconify/react/dist/iconify.js";
 import Image from "next/image";
 import React from "react";
 import Button from "../ui/Button";
-import { projectLinks } from "@/app/constants/links";
 
 const ProjectBlock = ({
   project,
@@ -33,7 +31,6 @@ const ProjectBlock = ({
           {project.buttons.map((button, key) => (
             <Button
               leftImageSrc={"mdi:github"}
-              leftImageAlt={project.title}
               onClick={() => {
                 window.open(project.links[key], "_blank");
               }}

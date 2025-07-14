@@ -1,7 +1,6 @@
 "use client";
 import React from "react";
 import Image from "next/image";
-import { Icon } from "@iconify/react";
 import { motion } from "framer-motion";
 import Button from "../ui/Button";
 
@@ -16,7 +15,7 @@ const Headshot = () => {
   return (
     <div
       id="about"
-      className="w-full flex flex-col py-[12%] bg-background text-foreground flex items-center border-b border-foreground/60 justify-center w-full"
+      className="w-full flex flex-col py-[13%] bg-background text-foreground flex items-center border-b border-foreground/60 justify-center w-full"
     >
       <motion.div
         className="hidden md:flex md:flex-row flex-col items-center justify-center gap-16 rounded-lg  pb-16"
@@ -33,7 +32,7 @@ const Headshot = () => {
           className="rounded-full"
         />
         <div className="text-center gap-3 flex flex-col">
-          <h1 className="text-2xl text-muted-foreground">Hi, I'm </h1>
+          <h1 className="text-2xl text-muted-foreground">Hi, I&apos;m </h1>
           <h1 className="text-4xl xs:text-5xl font-semibold whitespace-nowrap">
             Markose Tsegaye
           </h1>
@@ -41,8 +40,9 @@ const Headshot = () => {
           <div className="flex flex-row items-center justify-center gap-2 sm:gap-5 ">
             <Button
               leftImageSrc="mdi:file-pdf"
-              leftImageAlt="Resume"
-              onClick={() => {handleDownloadResume()}}
+              onClick={() => {
+                handleDownloadResume();
+              }}
               ctaButton={"mdi:arrow-down"}
               className="cursor-pointer hover:bg-foreground text-accent text-center text-lg rounded-lg hover:text-background   transition-colors"
             >
@@ -66,7 +66,7 @@ const Headshot = () => {
           className="rounded-full"
         />
         <div className="text-center gap-4 flex flex-col">
-          <h1 className="text-2xl text-muted-foreground">Hi, I'm </h1>
+          <h1 className="text-2xl text-muted-foreground">Hi, I&apos;m </h1>
           <h1 className="text-4xl xs:text-5xl font-semibold whitespace-nowrap">
             Markose Tsegaye
           </h1>
@@ -74,14 +74,14 @@ const Headshot = () => {
           <div className="flex flex-row items-center justify-center gap-2 sm:gap-5 ">
             <Button
               leftImageSrc="mdi:file-pdf"
-              leftImageAlt="Resume"
-              onClick={() => {handleDownloadResume()}}
+              onClick={() => {
+                handleDownloadResume();
+              }}
               ctaButton={"mdi:arrow-down"}
               className="cursor-pointer hover:bg-foreground text-accent rounded-lg hover:text-background  py-2 px-4 transition-colors"
             >
               Resume
             </Button>
-            
           </div>
         </div>
       </motion.div>

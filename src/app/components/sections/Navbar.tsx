@@ -1,6 +1,6 @@
 "use client";
 import Link from "next/link";
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { Icon } from "@iconify/react";
 import { ThemeToggle } from "../ThemeToggle";
 import { motion } from "framer-motion";
@@ -8,7 +8,6 @@ import { socialLinks } from "@/app/constants/links";
 
 const Navbar = () => {
   const [mobileMenu, setMobileMenu] = useState(false);
-  const [isScrolled, setIsScrolled] = useState(false);
   const scrollToSection = (sectionId: string) => {
     console.log("Scrolling to section:", sectionId);
     const element = document.getElementById(sectionId);
@@ -25,52 +24,40 @@ const Navbar = () => {
       <>
         <button
           onClick={() => scrollToSection("about")}
-          className={`hover:bg-accent hover:text-accent-foreground p-2 px-2 rounded-md transition-all duration-300 ${
-            isScrolled ? "text-lg" : "text-xl md:text-xl"
-          }`}
+          className={`hover:bg-accent hover:text-accent-foreground p-2 px-2 rounded-md transition-all duration-300 "text-xl md:text-xl"`}
         >
           About
         </button>
         <button
           onClick={() => scrollToSection("skills")}
-          className={`hover:bg-accent hover:text-accent-foreground p-2 px-2 rounded-md transition-all duration-300 ${
-            isScrolled ? "text-lg" : "text-xl md:text-xl"
-          }`}
+          className={`hover:bg-accent hover:text-accent-foreground p-2 px-2 rounded-md transition-all duration-300 "text-xl md:text-xl"`}
         >
           Skills
         </button>
         <button
           onClick={() => scrollToSection("projects")}
-          className={`hover:bg-accent hover:text-accent-foreground p-2 px-2 rounded-md transition-all duration-300 ${
-            isScrolled ? "text-lg" : "text-xl md:text-xl"
-          }`}
+          className={`hover:bg-accent hover:text-accent-foreground p-2 px-2 rounded-md transition-all duration-300 "text-xl md:text-xl"`}
         >
           Projects
         </button>
         <button
           onClick={() => scrollToSection("tiktok")}
-          className={`hover:bg-accent hover:text-accent-foreground p-2 px-2 rounded-md transition-all duration-300 ${
-            isScrolled ? "text-lg" : "text-xl md:text-xl"
-          }`}
+          className={`hover:bg-accent hover:text-accent-foreground p-2 px-2 rounded-md transition-all duration-300 "text-xl md:text-xl"`}
         >
           TikTok
         </button>
         <button
           onClick={() => scrollToSection("contact")}
-          className={`hover:bg-accent hover:text-accent-foreground p-2 px-2 rounded-md transition-all duration-300 ${
-            isScrolled ? "text-lg" : "text-xl md:text-xl"
-          }`}
+          className={`hover:bg-accent hover:text-accent-foreground p-2 px-2 rounded-md transition-all duration-300 "text-xl md:text-xl"`}
         >
           Contact
         </button>
-        
+
         <Link
           href={socialLinks.github}
           target="_blank"
           rel="noopener noreferrer"
-          className={`hover:bg-accent hover:text-accent-foreground p-2 px-2 rounded-md transition-all duration-300 ${
-            isScrolled ? "text-2xl" : "text-3xl"
-          }`}
+          className={`hover:bg-accent hover:text-accent-foreground p-2 px-2 rounded-md transition-all duration-300 "text-xl md:text-xl"`}
         >
           <Icon icon="mdi:github" className="text-3xl" />
         </Link>
@@ -83,9 +70,7 @@ const Navbar = () => {
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.6, ease: "easeInOut" }}
       viewport={{ once: true, amount: 0.5 }}
-      className={`w-full bg-background/95 backdrop-blur-sm text-foreground flex items-center justify-center px-4 sticky top-0 z-50 transition-all duration-300 ${
-        isScrolled ? "py-4" : "py-8"
-      }`}
+      className={`w-full bg-background/95  py-7  backdrop-blur-sm text-foreground flex items-center justify-center px-4 sticky top-0 z-50 transition-all duration-300 "py-8"`}
     >
       <div className="text-sm font-medium w-full flex justify-start items-center whitespace-nowrap ">
         <h1

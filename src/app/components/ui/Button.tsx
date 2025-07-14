@@ -3,14 +3,12 @@ import React from "react";
 
 const Button = ({
   leftImageSrc,
-  leftImageAlt = "Button Image",
   children,
   onClick,
   className = "",
   ctaButton,
 }: {
   leftImageSrc: string;
-  leftImageAlt: string;
   children: React.ReactNode;
   onClick: () => void;
   className: string;

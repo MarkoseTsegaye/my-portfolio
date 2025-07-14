@@ -1,7 +1,5 @@
 "use client";
 import React from "react";
-import Image from "next/image";
-import { Icon } from "@iconify/react/dist/iconify.js";
 import SkillsBlock from "../blocks/SkillsBlock";
 import {
   frameworksAndTechnologies,
@@ -18,20 +16,17 @@ const Skills = () => {
           title="Languages"
           tags={Object.values(langauges)}
           direction="left"
-          duration={5}
         />
         <SkillsBlock
           title="Frameworks and Tech"
           tags={Object.values(frameworksAndTechnologies)}
           direction="right"
-          duration={5}
         />
 
         <SkillsBlock
           title="Tools"
           tags={Object.values(tools)}
           direction="left"
-          duration={5}
         />
       </div>
     </div>

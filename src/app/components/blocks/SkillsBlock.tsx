@@ -7,12 +7,10 @@ const SkillsBlock = ({
   title,
   tags,
   direction,
-  duration,
 }: {
   title: string;
   tags: { label: string; image: string; size: number; invert?: boolean }[];
   direction: "left" | "right";
-  duration: number;
 }) => {
   const [isSm, setIsSm] = useState(false);
   const [isMounted, setIsMounted] = useState(false);
@@ -39,7 +37,6 @@ const SkillsBlock = ({
     return isSm ? tagSize : Math.round(tagSize * 0.6);
   };
 
-  const duplicatedTags = [...tags, ...tags]; // 💡 required for seamless loop
 
   return (
     <div className="flex flex-col justify-between rounded-xl w-full xs:w-[95%] md:w-[85%] lg:w-[75%]">

@@ -1,5 +1,4 @@
 "use client";
-import { imageUrls } from "@/app/constants/skills";
 import React from "react";
 import ProjectBlock from "../blocks/ProjectBlock";
 import { motion } from "framer-motion";
