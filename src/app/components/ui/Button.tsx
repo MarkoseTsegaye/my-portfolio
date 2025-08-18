@@ -16,7 +16,7 @@ const Button = ({
 }) => {
   return (
     <button
-      className={`w-4/5 sm:w-3/4 text-sm text-semibold sm:text-md md:whitespace-nowrap bg-background flex items-center justify-between sm:px-2 px-4 py-2 bg-accent text-foreground rounded-lg hover:bg-accent-foreground hover:text-accent-foreground/80 transition-colors border border-accent-foreground ${className}`}
+      className={`w-4/5 sm:w-3/4 text-sm text-semibold hover:scale-105 transition-all duration-300  sm:text-md md:whitespace-nowrap bg-foreground flex items-center justify-between sm:px-2 px-4 py-2 bg-accent text-background rounded-lg font-semibold hover:bg-accent-foreground hover:text-accent-foreground/80 transition-colors border border-background ${className}`}
       onClick={onClick}
     >
       <span className="flex items-center gap-2">

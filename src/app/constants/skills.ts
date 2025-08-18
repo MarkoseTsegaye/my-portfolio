@@ -15,7 +15,11 @@ export const langauges = {
   HTML: { label: "HTML", image: "langauges/html.svg", size: 90 },
 };
 export const frameworksAndTechnologies = {
-  React: { label: "React", image: "frameworksAndTech/react.svg", size: 90 },
+  React: {
+    label: "React.js/Native",
+    image: "frameworksAndTech/react.svg",
+    size: 90,
+  },
   "Next.js": {
     label: "Next.js",
     image: "frameworksAndTech/nextjs.svg",
@@ -33,7 +37,11 @@ export const frameworksAndTechnologies = {
     size: 90,
     invert: true,
   },
-  Django: { label: "Django", image: "frameworksAndTech/django.svg", size: 90 },
+  FastAPI: {
+    label: "FastAPI",
+    image: "frameworksAndTech/FastAPI.svg",
+    size: 90,
+  },
 
   Prisma: {
     label: "Prisma",
@@ -45,18 +53,25 @@ export const frameworksAndTechnologies = {
 export const tools = {
   Git: { label: "Git", image: "tools/git.svg", size: 90 },
   Figma: { label: "Figma", image: "tools/figma.svg", size: 90 },
-  Cursor: {
-    label: "Cursor",
-    image: "tools/cursor.svg",
+  Docker: { label: "Docker", image: "tools/docker.svg", size: 90 },
+  Postman: { label: "Postman", image: "tools/postman.svg", size: 90 },
+  AWS: { label: "AWS", image: "tools/amazon.svg", size: 90 },
+  Azure: { label: "Azure", image: "tools/Microsoft_Azure.svg", size: 90 },
+  OpenAI: {
+    label: "OpenAI",
+    image: "tools/openai-icon.svg",
     size: 90,
     invert: true,
   },
-  Docker: { label: "Docker", image: "tools/docker.svg", size: 90 },
-  Postman: { label: "Postman", image: "tools/postman.svg", size: 90 },
+  Redis: {
+    label: "Redis",
+    image: "tools/redis.svg",
+    size: 90,
+  },
 };
 
 export const imageUrls = {
   forkcast: "/forkcast.png",
   debateGuard: "/debateguard.png",
-  algoMinds: "/algoMinds.png",
+  algoMinds: "/algoMinds2.png",
 };

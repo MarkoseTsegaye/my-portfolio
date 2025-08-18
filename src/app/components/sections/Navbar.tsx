@@ -23,12 +23,6 @@ const Navbar = () => {
     return (
       <>
         <button
-          onClick={() => scrollToSection("about")}
-          className={`hover:bg-accent hover:text-accent-foreground p-2 px-2 rounded-md transition-all duration-300 "text-xl md:text-xl"`}
-        >
-          About
-        </button>
-        <button
           onClick={() => scrollToSection("skills")}
           className={`hover:bg-accent hover:text-accent-foreground p-2 px-2 rounded-md transition-all duration-300 "text-xl md:text-xl"`}
         >

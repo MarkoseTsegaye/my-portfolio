@@ -37,7 +37,7 @@ const Contact = () => {
         <div className="flex flex-col md:flex-row gap-2 sm:gap-8 mb-16">
           {/* Email Card */}
           <div
-            className="group relative bg-background border border-border rounded-2xl p-4 md:w-3/5 md:mx-auto hover:shadow-2xl hover:shadow-primary/10 transition-all duration-300 hover:-translate-y-2 cursor-pointer"
+            className="group relative bg-background border-t border-border rounded-2xl p-4 md:w-3/5 md:mx-auto hover:shadow-2xl hover:shadow-primary/10 transition-all duration-300 hover:-translate-y-2 cursor-pointer"
             onClick={handleEmailClick}
           >
             <div className="relative z-10">
@@ -62,7 +62,7 @@ const Contact = () => {
 
           {/* Phone Card */}
           <div
-            className="group relative bg-background border border-border rounded-2xl p-4 md:w-3/5 md:mx-auto hover:shadow-2xl hover:shadow-primary/10 transition-all duration-300 hover:-translate-y-2 cursor-pointer"
+            className="group relative bg-background border-t border-border rounded-2xl p-4 md:w-3/5 md:mx-auto hover:shadow-2xl hover:shadow-primary/10 transition-all duration-300 hover:-translate-y-2 cursor-pointer"
             onClick={handlePhoneClick}
           >
             <div className="relative z-10">
@@ -86,7 +86,7 @@ const Contact = () => {
           </div>
           {/* Linked In Card */}
           <div
-            className="group relative bg-background border border-border rounded-2xl p-4 md:w-3/5 md:mx-auto hover:shadow-2xl hover:shadow-primary/10 transition-all duration-300 hover:-translate-y-2 cursor-pointer"
+            className="group relative bg-background border-t border-border rounded-2xl p-4 md:w-3/5 md:mx-auto hover:shadow-2xl hover:shadow-primary/10 transition-all duration-300 hover:-translate-y-2 cursor-pointer"
             onClick={handleLinkedInClick}
           >
             <div className="relative z-10">

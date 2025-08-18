@@ -4,7 +4,7 @@ import Footer from "./components/Footer";
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-background text-foreground mx-auto w-full flex flex-col">
+    <div className="min-h-screen text-foreground mx-auto w-full flex flex-col">
       <Navbar />
       <LandingPage />
       <Footer />
