@@ -6,7 +6,7 @@ import Button from "../ui/Button";
 
 const Headshot = () => {
   const handleDownloadResume = () => {
-    const resumeUrl = "files/Markose_Tsegaye_resume.pdf";
+    const resumeUrl = "files/Markose_Tsegaye_SWE_Intern_Resume.pdf";
     const link = document.createElement("a");
     link.href = resumeUrl;
     link.download = "Markose_Tsegaye_Resume.pdf";
