@@ -15,7 +15,7 @@ const Headshot = () => {
   return (
     <div
       id="about"
-      className="w-full flex flex-col py-[13%] bg-background text-foreground flex items-center border-b border-foreground/60 justify-center w-full"
+      className="w-full flex flex-col py-[13%] bg-background text-foreground flex items-center border-b border-border justify-center w-full"
     >
       <motion.div
         className="hidden md:flex md:flex-row flex-col items-center justify-center gap-16 rounded-lg  pb-16"

@@ -8,30 +8,41 @@
   --primary-hover: #1e40af;        /* deeper blue */
   --secondary: #e0e7ff;            /* light indigo */
   --accent: #f3f4f6;               /* light gray */
+  --accent-foreground: #111827;    /* deep gray on accent */
   --muted: #f9fafb;                /* off white */
+  --muted-foreground: #6b7280;     /* muted gray text */
   --border: #d1d5db;               /* medium-light gray */
   --card: #ffffff;                 /* pure white */
   --card-foreground: #111827;      /* deep gray */
   --link: #1d4ed8;                 /* blue */
   --link-hover: #1e40af;           /* darker blue */
   --invert-filter: none;           /* no inversion in light mode */
+  --bg-glow: transparent;          /* no glow in light mode */
 }
 
-/* Dark mode palette - Elegant Neutrals */
+/* Dark mode palette - Deep Midnight */
 .dark {
-  --background: #0f172a;           /* deep slate */
-  --foreground: #f8fafc;           /* off white */
-  --primary: #60a5fa;              /* soft blue */
-  --primary-hover: #3b82f6;        /* bright blue */
-  --secondary: #1e293b;            /* slate gray */
-  --accent: #334155;               /* medium slate */
-  --muted: #1e293b;                /* dark muted */
-  --border: #475569;               /* slate border */
-  --card: #1e293b;                 /* slightly lighter than bg */
-  --card-foreground: #f8fafc;      /* off white */
+  --background: #07080d;           /* near-black midnight */
+  --foreground: #eef2f8;           /* soft off white */
+  --primary: #60a5fa;              /* soft blue accent */
+  --primary-hover: #93c5fd;        /* lighter blue */
+  --secondary: #12151f;            /* deep slate */
+  --accent: #1a1e2b;               /* subtle raised surface */
+  --accent-foreground: #eef2f8;    /* off white on accent */
+  --muted: #10131c;                /* dark muted */
+  --muted-foreground: #8b95a9;     /* dimmed slate text */
+  --border: #232838;               /* low-contrast border */
+  --card: #0d0f17;                 /* slightly raised from bg */
+  --card-foreground: #eef2f8;      /* off white */
   --link: #60a5fa;                 /* soft blue */
   --link-hover: #93c5fd;           /* lighter blue */
   --invert-filter: invert(1);      /* invert in dark mode */
+  /* soft blue glow anchored to the top of the page for depth */
+  --bg-glow: radial-gradient(
+    1200px circle at 50% -10%,
+    rgba(96, 165, 250, 0.08),
+    transparent 55%
+  );
 }
 
 @theme inline {
@@ -41,7 +52,9 @@
   --color-primary-hover: var(--primary-hover);
   --color-secondary: var(--secondary);
   --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
   --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
   --color-border: var(--border);
   --color-card: var(--card);
   --color-card-foreground: var(--card-foreground);
@@ -60,8 +73,11 @@
 }
 
 body {
-  background: var(--background);
+  background-color: var(--background);
+  background-image: var(--bg-glow);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
-  transition: background 0.2s, color 0.2s;
+  transition: background-color 0.2s, color 0.2s;
 }
