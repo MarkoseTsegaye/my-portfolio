@@ -1,6 +1,7 @@
 "use client";
 import React from "react";
 import SkillsBlock from "../blocks/SkillsBlock";
+import SectionHeading from "../ui/SectionHeading";
 import {
   frameworksAndTechnologies,
   langauges,
@@ -9,8 +10,10 @@ import {
 
 const Skills = () => {
   return (
-    <div id="skills" className="py-[4%] scroll-mt-8">
-      <h1 className="text-4xl xs:text-6xl font-bold text-center pb-[5%] ">Skills</h1>
+    <div id="skills" className="py-[6%] scroll-mt-8">
+      <div className="flex justify-center pb-[5%]">
+        <SectionHeading kicker="My toolkit" title="Skills" />
+      </div>
       <div className="flex flex-col md:flex-col w-full justify-between md:justify-between items-center gap-16">
         <SkillsBlock
           title="Languages"

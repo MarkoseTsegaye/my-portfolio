@@ -11,19 +11,19 @@ const Button = ({
   leftImageSrc: string;
   children: React.ReactNode;
   onClick: () => void;
-  className: string;
+  className?: string;
   ctaButton?: string;
 }) => {
   return (
     <button
-      className={`w-4/5 sm:w-3/4 text-sm text-semibold hover:scale-105 transition-all duration-300  sm:text-md md:whitespace-nowrap bg-foreground flex items-center justify-between sm:px-2 px-4 py-2 bg-accent text-background rounded-lg font-semibold hover:bg-accent-foreground hover:text-accent-foreground/80 transition-colors border border-background ${className}`}
+      className={`group w-full flex items-center justify-between gap-2 rounded-xl border-2 border-primary bg-primary px-4 py-3 font-black text-background md:whitespace-nowrap hover:-translate-y-1 hover:shadow-lg hover:shadow-primary/20 transition-all duration-300 cursor-pointer ${className}`}
       onClick={onClick}
     >
       <span className="flex items-center gap-2">
         <Icon icon={leftImageSrc} className="w-5 h-5" />
         <span>{children}</span>
       </span>
-      <span className="ml-2 flex items-center sm:p-2 py-1 rounded-lg">
+      <span className="flex items-center transition-transform duration-300 group-hover:translate-x-1">
         <Icon icon={ctaButton || "mdi:arrow-right"} className="w-5 h-5" />
       </span>
     </button>

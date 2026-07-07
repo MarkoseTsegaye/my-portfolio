@@ -41,7 +41,7 @@ const SkillsBlock = ({
   return (
     <div className="flex flex-col justify-between rounded-xl w-full xs:w-[95%] md:w-[85%] lg:w-[75%]">
       <motion.h1
-        className="text-2xl font-semibold text-center pb-4 w-3/5 sm:w-2/5 mx-auto pb-5 relative after:content-[''] after:absolute after:left-0 after:bottom-0 after:w-full after:h-[1.5px] after:bg-gradient-to-r after:from-transparent after:via-foreground/20 after:to-transparent"
+        className="text-2xl xs:text-3xl font-extrabold tracking-tight text-center pb-4 w-3/5 sm:w-2/5 mx-auto pb-5 relative after:content-[''] after:absolute after:left-0 after:bottom-0 after:w-full after:h-[2px] after:bg-gradient-to-r after:from-transparent after:via-primary/40 after:to-transparent"
         initial={{ opacity: 0, x: direction === "left" ? -50 : 50, scale: 0.9 }}
         whileInView={{ opacity: 1, x: 0, scale: 1 }}
         viewport={{ once: true, amount: 0.6 }}
@@ -71,7 +71,7 @@ const SkillsBlock = ({
                 boxShadow: "0px 4px 16px 0px rgba(0,0,0,0.15)",
               }}
             >
-              <div className="flex items-center justify-center flex-row border-3 border-primary/10 rounded-xl p-2">
+              <div className="flex items-center justify-center flex-row border-2 border-border bg-card rounded-xl p-3">
                 <Image
                   src={`/${tag.image}`}
                   alt={tag.label}

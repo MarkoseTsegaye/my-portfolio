@@ -31,7 +31,7 @@
   --accent-foreground: #eef2f8;    /* off white on accent */
   --muted: #10131c;                /* dark muted */
   --muted-foreground: #8b95a9;     /* dimmed slate text */
-  --border: #232838;               /* low-contrast border */
+  --border: #2c3346;               /* defined border for thick edges */
   --card: #0d0f17;                 /* slightly raised from bg */
   --card-foreground: #eef2f8;      /* off white */
   --link: #60a5fa;                 /* soft blue */
