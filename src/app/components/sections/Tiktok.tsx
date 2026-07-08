@@ -1,7 +1,6 @@
 "use client";
 import React, { useEffect } from "react";
 import { motion } from "framer-motion";
-import SectionHeading from "../ui/SectionHeading";
 
 // TikTok video data with proper embed information
 const tiktokVideos = [
@@ -49,9 +48,9 @@ const Tiktok = () => {
 
   return (
     <div id="tiktok" className="py-[6%] scroll-mt-8">
-      <div className="flex justify-center pb-[5%]">
-        <SectionHeading kicker="Off the clock" title="Check out my TikTok!" />
-      </div>
+      <h1 className="text-4xl xs:text-6xl font-bold text-center pb-[5%]">
+        Check out my TikTok!
+      </h1>
 
       <div className="flex flex-col lg:flex-row gap-16 justify-center items-center w-full max-w-7xl mx-auto px-4">
         {tiktokVideos.map((video, index) => (
@@ -67,9 +66,9 @@ const Tiktok = () => {
               transition: { duration: 0.3 },
             }}
           >
-            <div className="bg-card border-2 border-border rounded-xl overflow-hidden shadow-lg hover:shadow-xl hover:border-primary/50 transition-all duration-300">
+            <div className="border border-border bg-background/40 backdrop-blur-sm rounded-xl overflow-hidden hover:shadow-xl hover:shadow-primary/5 hover:border-primary/20 transition-all duration-300">
               {/* TikTok Video Embed */}
-              <div className="relative bg-muted p-4">
+              <div className="relative p-4">
                 <blockquote
                   className="tiktok-embed"
                   cite={`https://www.tiktok.com/@${video.username}/video/${video.videoId}`}

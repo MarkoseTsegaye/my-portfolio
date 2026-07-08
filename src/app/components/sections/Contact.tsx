@@ -2,7 +2,6 @@
 import React from "react";
 import { Icon } from "@iconify/react/dist/iconify.js";
 import { socialLinks } from "@/app/constants/links";
-import SectionHeading from "../ui/SectionHeading";
 
 const Contact = () => {
   const handleEmailClick = () => {
@@ -24,7 +23,9 @@ const Contact = () => {
       <div className="max-w-6xl mx-auto relative z-10">
         {/* Header Section */}
         <div className="flex flex-col items-center mb-16 gap-6">
-          <SectionHeading kicker="Get in touch" title="Let's Connect" />
+          <h1 className="text-4xl xs:text-6xl font-bold text-center pb-[2%]">
+            Let&apos;s Connect
+          </h1>
           <p className="text-xl md:text-2xl text-muted-foreground max-w-3xl mx-auto leading-relaxed text-center">
             I&apos;m always excited to explore new opportunities, collaborate on
             interesting projects, and connect with fellow developers. Let&apos;s
@@ -36,7 +37,7 @@ const Contact = () => {
         <div className="flex flex-col md:flex-row gap-2 sm:gap-8 mb-16">
           {/* Email Card */}
           <div
-            className="group relative bg-card border-2 border-border rounded-2xl p-6 md:w-3/5 md:mx-auto hover:border-primary/60 hover:shadow-2xl hover:shadow-primary/10 transition-all duration-300 hover:-translate-y-2 cursor-pointer"
+            className="group relative rounded-2xl border border-border bg-background/40 backdrop-blur-sm p-6 md:w-3/5 md:mx-auto hover:border-primary/20 hover:shadow-xl hover:shadow-primary/5 transition-all duration-300 hover:-translate-y-1 cursor-pointer"
             onClick={handleEmailClick}
           >
             <div className="relative z-10">
@@ -61,7 +62,7 @@ const Contact = () => {
 
           {/* Phone Card */}
           <div
-            className="group relative bg-card border-2 border-border rounded-2xl p-6 md:w-3/5 md:mx-auto hover:border-primary/60 hover:shadow-2xl hover:shadow-primary/10 transition-all duration-300 hover:-translate-y-2 cursor-pointer"
+            className="group relative rounded-2xl border border-border bg-background/40 backdrop-blur-sm p-6 md:w-3/5 md:mx-auto hover:border-primary/20 hover:shadow-xl hover:shadow-primary/5 transition-all duration-300 hover:-translate-y-1 cursor-pointer"
             onClick={handlePhoneClick}
           >
             <div className="relative z-10">
@@ -85,7 +86,7 @@ const Contact = () => {
           </div>
           {/* Linked In Card */}
           <div
-            className="group relative bg-card border-2 border-border rounded-2xl p-6 md:w-3/5 md:mx-auto hover:border-primary/60 hover:shadow-2xl hover:shadow-primary/10 transition-all duration-300 hover:-translate-y-2 cursor-pointer"
+            className="group relative rounded-2xl border border-border bg-background/40 backdrop-blur-sm p-6 md:w-3/5 md:mx-auto hover:border-primary/20 hover:shadow-xl hover:shadow-primary/5 transition-all duration-300 hover:-translate-y-1 cursor-pointer"
             onClick={handleLinkedInClick}
           >
             <div className="relative z-10">

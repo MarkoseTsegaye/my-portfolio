@@ -16,8 +16,8 @@ const ProjectBlock = ({
   };
 }) => {
   return (
-    <div className="group flex flex-col gap-4 p-5 sm:p-6 w-3/4 lg:w-1/3 rounded-2xl border-2 border-border bg-card transition-all duration-300 hover:border-primary/60 hover:-translate-y-1 hover:shadow-2xl hover:shadow-primary/5">
-      <div className="overflow-hidden rounded-xl border-2 border-border bg-background">
+    <div className="group flex flex-col gap-4 p-5 sm:p-6 w-3/4 lg:w-1/3 rounded-2xl border border-border bg-background/40 backdrop-blur-sm transition-all duration-300 hover:border-primary/20 hover:shadow-xl hover:shadow-primary/5">
+      <div className="overflow-hidden rounded-xl border border-border bg-background">
         <Image
           src={project.imageUrl}
           alt={project.title}
@@ -27,7 +27,7 @@ const ProjectBlock = ({
         />
       </div>
 
-      <h3 className="text-2xl font-extrabold tracking-tight text-center">
+      <h3 className="text-2xl font-bold tracking-tight text-center">
         {project.title}
       </h3>
 
@@ -35,7 +35,7 @@ const ProjectBlock = ({
         {project.tags.map((tag) => (
           <span
             key={tag}
-            className="rounded-md border-2 border-border bg-background px-2.5 py-0.5 text-xs font-bold"
+            className="rounded-full border border-border bg-background/60 px-3 py-1 text-xs font-medium text-muted-foreground"
           >
             {tag}
           </span>
