@@ -7,6 +7,10 @@ export const socialLinks = {
   tiktok: "https://www.tiktok.com/@markswe7",
 };
 
+export const experienceLinks = {
+  creditAcceptance: "https://www.creditacceptance.com",
+};
+
 export const projectLinks = {
   forkcast: {
     demo: "https://www.forkcast.pro",

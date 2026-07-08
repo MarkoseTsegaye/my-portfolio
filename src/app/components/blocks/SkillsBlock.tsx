@@ -1,96 +1,63 @@
 "use client";
-import React, { useState, useEffect } from "react";
+import React from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
 
 const SkillsBlock = ({
   title,
   tags,
-  direction,
+  index = 0,
 }: {
   title: string;
   tags: { label: string; image: string; size: number; invert?: boolean }[];
-  direction: "left" | "right";
+  index?: number;
 }) => {
-  const [isSm, setIsSm] = useState(false);
-  const [isMounted, setIsMounted] = useState(false);
-
-  useEffect(() => {
-    setIsMounted(true);
-    const checkScreenSize = () => {
-      setIsSm(window.innerWidth >= 640);
-    };
-
-    checkScreenSize();
-    window.addEventListener("resize", checkScreenSize);
-
-    return () => window.removeEventListener("resize", checkScreenSize);
-  }, []);
-
-  // Define image size based on screen
-  const getImageSize = (tagSize: number) => {
-    // During SSR or before mounting, use the smaller size to match server
-    if (!isMounted) {
-      return Math.round(tagSize );
-    }
-    // If sm and up, use tag.size, else use a smaller size (e.g., 60)
-    return isSm ? tagSize : Math.round(tagSize * 0.6);
-  };
-
-
   return (
-    <div className="flex flex-col justify-between rounded-xl w-full xs:w-[95%] md:w-[85%] lg:w-[75%]">
-      <motion.h1
-        className="text-2xl xs:text-3xl font-extrabold tracking-tight text-center pb-4 w-3/5 sm:w-2/5 mx-auto pb-5 relative after:content-[''] after:absolute after:left-0 after:bottom-0 after:w-full after:h-[2px] after:bg-gradient-to-r after:from-transparent after:via-primary/40 after:to-transparent"
-        initial={{ opacity: 0, x: direction === "left" ? -50 : 50, scale: 0.9 }}
-        whileInView={{ opacity: 1, x: 0, scale: 1 }}
-        viewport={{ once: true, amount: 0.6 }}
-        transition={{ duration: 0.5, ease: "easeInOut" }}
-      >
+    <motion.div
+      className="group relative flex flex-col rounded-2xl border border-border bg-background/40 backdrop-blur-sm p-4 sm:p-5 hover:shadow-xl hover:shadow-primary/5 hover:border-primary/20 transition-all duration-300"
+      initial={{ opacity: 0, y: 40 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, amount: 0.2 }}
+      transition={{ duration: 0.5, ease: "easeInOut", delay: index * 0.1 }}
+    >
+      <h2 className="text-base sm:text-lg font-semibold text-center pb-4 mb-3 relative after:content-[''] after:absolute after:left-0 after:bottom-0 after:w-full after:h-[1.5px] after:bg-gradient-to-r after:from-transparent after:via-foreground/25 after:to-transparent">
         {title}
-      </motion.h1>
+      </h2>
 
-      <div className="relative w-full overflow-hidden  py-5  ">
-        <motion.div className="flex flex-row flex-wrap justify-center mx-auto  items-center gap-5 md:gap-10 w-full max-w-max">
-          {tags.map((tag, index) => (
-            <motion.div
-              className="flex flex-col items-center justify-center  rounded-xl "
-              key={`${tag.label}-${index}`}
-              animate={{
-                y: [0, 10, 0],
-              }}
-              transition={{
-                duration: 2.2,
-                repeat: Infinity,
-                repeatType: "loop",
-                ease: "easeInOut",
-                delay: index * 0.08, // small stagger for a more organic effect
-              }}
-              whileHover={{
-                scale: 1.15,
-                boxShadow: "0px 4px 16px 0px rgba(0,0,0,0.15)",
-              }}
-            >
-              <div className="flex items-center justify-center flex-row border-2 border-border bg-card rounded-xl p-3">
-                <Image
-                  src={`/${tag.image}`}
-                  alt={tag.label}
-                  width={getImageSize(tag.size)}
-                  height={getImageSize(tag.size)}
-                  style={{
-                    filter: tag.invert ? "var(--invert-filter)" : "none",
-                  }}
-                  className={`hover:scale-115 transition-all object-cover  duration-300`}
-                />
-              </div>
-              <p className="text-sm text-muted-foreground  text-center py-1 font-semibold">
-                {tag.label}
-              </p>
-            </motion.div>
-          ))}
-        </motion.div>
+      <div className="flex flex-row flex-wrap justify-center items-start gap-3 sm:gap-4">
+        {tags.map((tag, i) => (
+          <motion.div
+            className="flex flex-col items-center justify-start gap-1.5 w-[60px] sm:w-[68px]"
+            key={`${tag.label}-${i}`}
+            animate={{ y: [0, 6, 0] }}
+            transition={{
+              duration: 2.4,
+              repeat: Infinity,
+              repeatType: "loop",
+              ease: "easeInOut",
+              delay: i * 0.12,
+            }}
+            whileHover={{ scale: 1.12 }}
+          >
+            <div className="flex items-center justify-center rounded-xl border border-primary/10 bg-primary/5 group-hover:bg-primary/10 transition-colors duration-300 w-[48px] h-[48px] sm:w-[54px] sm:h-[54px]">
+              <Image
+                src={`/${tag.image}`}
+                alt={tag.label}
+                width={40}
+                height={40}
+                style={{
+                  filter: tag.invert ? "var(--invert-filter)" : "none",
+                }}
+                className="w-[30px] h-[30px] sm:w-[34px] sm:h-[34px] object-contain transition-transform duration-300"
+              />
+            </div>
+            <p className="text-[11px] leading-tight text-muted-foreground text-center font-medium">
+              {tag.label}
+            </p>
+          </motion.div>
+        ))}
       </div>
-    </div>
+    </motion.div>
   );
 };
 

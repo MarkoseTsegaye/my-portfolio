@@ -1,5 +1,7 @@
 @import "tailwindcss";
 
+@custom-variant dark (&:where(.dark, .dark *));
+
 /* Light mode palette - Soft Modern Neutrals */
 :root {
   --background: #f9fafb;           /* soft white */
