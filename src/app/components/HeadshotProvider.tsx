@@ -15,12 +15,16 @@ type HeadshotContextValue = {
 
 const HeadshotContext = createContext<HeadshotContextValue | null>(null);
 
+// Fallback used when the hook is rendered outside a provider (e.g. the
+// accidental /components/landingPage route Next.js generates). Defaults to no
+// animation so it stays inert rather than throwing during prerender.
+const fallbackValue: HeadshotContextValue = {
+  isPastHero: false,
+  heroRef: { current: null },
+};
+
 export const useHeadshot = () => {
-  const context = useContext(HeadshotContext);
-  if (!context) {
-    throw new Error("useHeadshot must be used within a HeadshotProvider");
-  }
-  return context;
+  return useContext(HeadshotContext) ?? fallbackValue;
 };
 
 export const HeadshotProvider = ({

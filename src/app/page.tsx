@@ -1,4 +1,4 @@
-import LandingPage from "./components/landingPage/page";
+import LandingPage from "./components/landingPage/LandingPage";
 import Navbar from "./components/sections/Navbar";
 import Footer from "./components/Footer";
 import { HeadshotProvider } from "./components/HeadshotProvider";
